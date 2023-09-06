@@ -1,52 +1,62 @@
 package com.rentcar.vehicles.web.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 
-// @JsonFilter("monFiltreDynamique")  // commenter pour pouvoir utiliser les autres méthodes qui n'ont pas de filtres
+//@JsonFilter("monFiltreDynamique")  // commenter pour pouvoir utiliser les autres méthodes qui n'ont pas de filtres
 
 
 @Entity
-public class Vehicles {
+public class Vehicle {
 
     @Id
+    @Size(min=6, max=15)
     private String registration;
+
+    @Size(min=4, max=15)
     private String type;
-    private String color;
+
+    @Size(min=3, max=15)
+    private String brand;
+
+    @Size(min=1, max=25)
     private String model;
+
+    @Size(min=3, max=15)
+    private String color;
+
     private int cylinder;
-    private int loadVolume;
+
+    private float loadVolume;
+
     private int currentPrice;
 
     @Override
     public String toString() {
-        return "Vehicles{" +
+        return "Vehicle{" +
                 "registration='" + registration + '\'' +
                 ", type='" + type + '\'' +
-                ", color='" + color + '\'' +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
                 ", cylinder=" + cylinder +
                 ", loadVolume=" + loadVolume +
                 ", currentPrice=" + currentPrice +
                 '}';
     }
 
-
     //  🥎 -------- constructor ----------
 
-    public Vehicles(){};
+    public Vehicle(){};
 
-
-    public Vehicles(String registration, String type, String color, String model, int cylinder, int loadVolume, int currentPrice) {
+    public Vehicle(String registration, String type, String brand, String model, String color, int cylinder, float loadVolume, int currentPrice) {
         this.registration = registration;
         this.type = type;
-        this.color = color;
+        this.brand = brand;
         this.model = model;
+        this.color = color;
         this.cylinder = cylinder;
         this.loadVolume = loadVolume;
         this.currentPrice = currentPrice;
@@ -54,6 +64,7 @@ public class Vehicles {
 
 
     //  🥎 -------- getter and setter ----------
+
 
     public String getRegistration() {
         return registration;
@@ -79,6 +90,14 @@ public class Vehicles {
         this.color = color;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     public String getModel() {
         return model;
     }
@@ -95,7 +114,7 @@ public class Vehicles {
         this.cylinder = cylinder;
     }
 
-    public int getLoadVolume() {
+    public float getLoadVolume() {
         return loadVolume;
     }
 
