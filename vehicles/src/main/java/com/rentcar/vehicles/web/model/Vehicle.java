@@ -29,11 +29,11 @@ public class Vehicle {
     @Size(min=3, max=15)
     private String color;
 
-    private int cylinder;
+    private Integer cylinder;
 
     private int horsepowerTax;
 
-    private float loadVolume;
+    private Integer loadVolume;
 
     private int currentPrice;
 
@@ -69,7 +69,7 @@ public class Vehicle {
 
     public Vehicle(){};
 
-    public Vehicle(String registration, String type, String brand, String model, int km, String color, int cylinder, int horsepowerTax, float loadVolume, int currentPrice, float kmPrice, float cylinderPrice, float volumePrice, float cleaningCoast) {
+    public Vehicle(String registration, String type, String brand, String model, int km, String color, Integer cylinder, int horsepowerTax, Integer loadVolume, int currentPrice, float kmPrice, float cylinderPrice, float volumePrice, float cleaningCoast) {
         this.registration = registration;
         this.type = type;
         this.brand = brand;
@@ -138,7 +138,7 @@ public class Vehicle {
         this.color = color;
     }
 
-    public int getCylinder() {
+    public Integer getCylinder() {
         return cylinder;
     }
 
@@ -154,11 +154,11 @@ public class Vehicle {
         this.horsepowerTax = horsepowerTax;
     }
 
-    public float getLoadVolume() {
+    public Integer getLoadVolume() {
         return loadVolume;
     }
 
-    public void setLoadVolume(float loadVolume) {
+    public void setLoadVolume(Integer loadVolume) {
         this.loadVolume = loadVolume;
     }
 
