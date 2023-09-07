@@ -24,6 +24,8 @@ public class Vehicle {
     @Size(min=1, max=25)
     private String model;
 
+    private int km;
+
     @Size(min=3, max=15)
     private String color;
 
@@ -50,6 +52,7 @@ public class Vehicle {
                 ", type='" + type + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", km=" + km +
                 ", color='" + color + '\'' +
                 ", cylinder=" + cylinder +
                 ", horsepowerTax=" + horsepowerTax +
@@ -66,11 +69,12 @@ public class Vehicle {
 
     public Vehicle(){};
 
-    public Vehicle(String registration, String type, String brand, String model, String color, int cylinder, int horsepowerTax, float loadVolume, int currentPrice, float kmPrice, float cylinderPrice, float volumePrice, float cleaningCoast) {
+    public Vehicle(String registration, String type, String brand, String model, int km, String color, int cylinder, int horsepowerTax, float loadVolume, int currentPrice, float kmPrice, float cylinderPrice, float volumePrice, float cleaningCoast) {
         this.registration = registration;
         this.type = type;
         this.brand = brand;
         this.model = model;
+        this.km = km;
         this.color = color;
         this.cylinder = cylinder;
         this.horsepowerTax = horsepowerTax;
@@ -116,6 +120,14 @@ public class Vehicle {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public int getKm() {
+        return km;
+    }
+
+    public void setKm(int km) {
+        this.km = km;
     }
 
     public String getColor() {
