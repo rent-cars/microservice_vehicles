@@ -31,7 +31,7 @@ public class VehiclesController {
 // -----------------------
 
 
-    @ApiOperation("Affiche tous les véhicules")
+    @ApiOperation("Affiche tous les véhicules ou par la marque ou type")
     @GetMapping
     public List<Vehicle> listVehicle(@RequestParam(value = "brand", required = false) String brand, @RequestParam(value = "type", required = false) String type) {
         if(brand==null && type==null) {
